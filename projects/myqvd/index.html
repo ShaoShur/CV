@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d0c">
+  <meta name="description" content="MyQvd — локальный просмотрщик и редактор метаданных QVD-файлов для Windows. Проект ShaoShur на Tauri, React и Rust.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>MyQvd — локальная работа с QVD | ShaoShur</title>
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="../../assets/detail.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+
+  <header class="detail-header">
+    <div class="container">
+      <a class="detail-brand" href="../../index.html" aria-label="ShaoShur — на главную">
+        <span class="detail-brand-mark">S</span>
+        <span class="detail-brand-copy"><strong>ShaoShur</strong><small>Project / MyQvd</small></span>
+      </a>
+      <nav class="detail-nav" aria-label="Навигация страницы">
+        <a class="optional" href="#features">Возможности</a>
+        <a class="optional" href="#roadmap">Roadmap</a>
+        <a class="back-link" href="../../index.html#projects">← Все проекты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="detail-hero">
+      <div class="container detail-hero-grid">
+        <div class="reveal">
+          <div class="detail-status"><i></i> MVP 0.1.0 · идёт тестирование</div>
+          <p class="detail-kicker">Desktop utility / QVD</p>
+          <h1>QVD,<br>который можно <em>открыть.</em></h1>
+          <p class="detail-lead">MyQvd — локальный просмотрщик и будущий редактор QVD-файлов. Он помогает изучать структуру, данные и технические метаданные без загрузки файла на внешний сервер.</p>
+          <div class="detail-actions">
+            <a class="detail-button primary" href="../../downloads/MyQvd-0.1.0-windows-x64.zip" download>Скачать тестовую сборку <span>↓</span></a>
+            <a class="detail-button" href="#features">Что уже работает <span>↓</span></a>
+          </div>
+          <p class="detail-note">Windows x64 · 2.8 МБ · тестовая версия</p>
+          <div class="test-warning" role="note" aria-label="Предупреждение о тестовой версии">
+            <span class="test-warning-icon" aria-hidden="true">!</span>
+            <div><strong>Важно: версия находится в тестировании</strong><p>Работайте только с копиями файлов. Не открывайте в MyQvd единственный экземпляр критичного QVD.</p></div>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal" aria-label="Концептуальный интерфейс MyQvd">
+          <div class="window-bar"><span>MYQVD / CUSTOMER_SALES.QVD</span><span class="window-dots"><i></i><i></i><i></i></span></div>
+          <div class="panel-body">
+            <div class="panel-title"><div><small>TABLE NAME</small><strong>CustomerSales</strong></div><small>28.4 MB · QVD</small></div>
+            <div class="data-table" aria-hidden="true">
+              <div class="data-row header"><span>#</span><span>Field</span><span>Value</span><span>Cardinality</span></div>
+              <div class="data-row"><span>01</span><span>CustomerID</span><span class="ok">C-10428</span><span>18 204</span></div>
+              <div class="data-row"><span>02</span><span>OrderDate</span><span>2026-07-29</span><span>1 827</span></div>
+              <div class="data-row"><span>03</span><span>Revenue</span><span>428 750</span><span>24 991</span></div>
+              <div class="data-row"><span>04</span><span>Region</span><span>North-West</span><span>8</span></div>
+              <div class="data-row"><span>05</span><span>ProductGroup</span><span>Hardware</span><span>127</span></div>
+            </div>
+            <div class="panel-footer"><span>250 rows / page</span><span>12 fields · 82 430 rows</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-meta" aria-label="Краткая информация о проекте">
+      <div class="container detail-meta-grid">
+        <div><span>Статус</span><strong>Тестирование MVP</strong></div>
+        <div><span>Платформа</span><strong>Windows x64</strong></div>
+        <div><span>Данные</span><strong>Только локально</strong></div>
+        <div><span>Стек</span><strong>Tauri · React · Rust</strong></div>
+      </div>
+    </section>
+
+    <section class="detail-section paper" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">01 / ЗАЧЕМ</p><h2>Посмотреть QVD<br>без лишней инфраструктуры.</h2></div>
+          <p>Системный WebView отвечает за интерфейс, Rust читает QVD через OpenQVD, а frontend получает только метаданные и запрошенную страницу строк.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><span>01</span><h3>Локальность</h3><p>Файл не отправляется на внешний сервер. Чтение и работа с содержимым выполняются на компьютере пользователя.</p></article>
+          <article class="feature-card reveal"><span>02</span><h3>Понятная структура</h3><p>Имя таблицы, число строк, поля, cardinality, размер файла и технические метаданные собраны в одном интерфейсе.</p></article>
+          <article class="feature-card reveal"><span>03</span><h3>Безопасный Save As</h3><p>Изменённый заголовок сохраняется в новый QVD, бинарное тело копируется потоком, а результат повторно валидируется.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">02 / MVP</p><h2>Что уже работает.</h2></div>
+          <p>Текущая версия сосредоточена на прозрачном чтении QVD и контролируемом редактировании метаданных.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card reveal"><span>READ</span><h3>Выбор локального .qvd</h3><p>Системный диалог открытия файла и чтение формата в Rust с помощью OpenQVD.</p></article>
+          <article class="capability-card reveal"><span>EXPLORE</span><h3>Поля и cardinality</h3><p>Список полей с техническими характеристиками и возможностью временно скрыть колонку.</p></article>
+          <article class="capability-card reveal"><span>DATA</span><h3>Таблица по 250 строк</h3><p>Постраничный просмотр значений без передачи всего набора данных во frontend.</p></article>
+          <article class="capability-card reveal"><span>DUAL</span><h3>Qlik dual values</h3><p>Текстовая часть показывается пользователю, числовая остаётся сохранённой в модели.</p></article>
+          <article class="capability-card reveal"><span>METADATA</span><h3>NumberFormat и Tags</h3><p>Просмотр известных метаданных таблицы и полей, включая техническую структуру заголовка.</p></article>
+          <article class="capability-card reveal"><span>ADVANCED</span><h3>Исходный XML</h3><p>Продвинутый режим просмотра и защищённого редактирования XML-заголовка QVD.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section dark" aria-labelledby="screenshots-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">03 / ИНТЕРФЕЙС</p><h2 id="screenshots-title">Скриншоты<br>скоро появятся.</h2></div>
+          <p>Программа находится в тестировании. Актуальные снимки интерфейса будут загружены после завершения текущего цикла проверки.</p>
+        </div>
+        <div class="gallery-placeholder reveal">
+          <div class="placeholder-frame"><div class="placeholder-grid"></div><div class="placeholder-center"><span>SCREENSHOT / 01</span><strong>Главный экран просмотра QVD</strong><p>Здесь появится актуальный интерфейс таблицы и панели полей.</p></div></div>
+          <div class="placeholder-stack">
+            <div class="placeholder-frame"><div class="placeholder-grid"></div><div class="placeholder-center"><span>SCREENSHOT / 02</span><strong>Метаданные</strong></div></div>
+            <div class="placeholder-frame"><div class="placeholder-grid"></div><div class="placeholder-center"><span>SCREENSHOT / 03</span><strong>XML header</strong></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section paper" id="roadmap">
+      <div class="container roadmap">
+        <div class="roadmap-copy reveal"><p class="section-label">04 / ДАЛЬШЕ</p><h2>От просмотра<br>к полноценному редактору.</h2></div>
+        <div class="roadmap-list reveal">
+          <div class="roadmap-item"><span>01</span><strong>Сортировка и фильтрация</strong><small>в плане</small></div>
+          <div class="roadmap-item"><span>02</span><strong>Быстрый переход к далёким страницам</strong><small>исследование</small></div>
+          <div class="roadmap-item"><span>03</span><strong>Редактирование значений строк</strong><small>в плане</small></div>
+          <div class="roadmap-item"><span>04</span><strong>Undo / Redo для изменений данных</strong><small>в плане</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-cta">
+      <div class="container detail-cta-inner reveal">
+        <div><p class="section-label">TEST BUILD</p><h2>Хотите посмотреть<br>на QVD изнутри?</h2><div class="test-warning" role="note"><span class="test-warning-icon" aria-hidden="true">!</span><div><strong>Только для тестирования</strong><p>Используйте копию файла и обязательно сохраняйте исходный QVD отдельно.</p></div></div></div>
+        <a class="detail-button primary" href="../../downloads/MyQvd-0.1.0-windows-x64.zip" download>MyQvd 0.1.0 · Windows x64 <span>↓</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="detail-footer">
+    <div class="container"><span>© <span data-year>2026</span> ShaoShur / MyQvd</span><a href="../../index.html#projects">← Вернуться к проектам</a></div>
+  </footer>
+  <script src="../../assets/detail.js" defer></script>
+</body>
+</html>
