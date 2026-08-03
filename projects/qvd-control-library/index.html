@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0b0d0c">
-  <meta name="description" content="QVD Control Library — модульная библиотека QVS-подпрограмм для подключения, контроля качества данных, логирования и автоматической очистки переменных в Qlik Sense.">
+  <meta name="description" content="Qlik Script Toolkit — модульные QVS-библиотеки для Qlik Sense: единый контракт, подключение одной строкой, встроенные справка, тестирование и очистка состояния.">
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <title>QVD Control Library — QVS-библиотеки | ShaoShur</title>
+  <title>Qlik Script Toolkit — модульные QVS-библиотеки | ShaoShur</title>
   <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="../../assets/detail.css">
 </head>
@@ -20,13 +20,13 @@
     <div class="container">
       <a class="detail-brand" href="../../index.html" aria-label="ShaoShur — на главную">
         <span class="detail-brand-mark">S</span>
-        <span class="detail-brand-copy"><strong>ShaoShur</strong><small>Project / QVD Control</small></span>
+        <span class="detail-brand-copy"><strong>ShaoShur</strong><small>Project / Script Toolkit</small></span>
       </a>
       <nav class="detail-nav" aria-label="Навигация страницы">
-        <a class="optional" href="#architecture">Архитектура</a>
-        <a class="optional" href="#idea">Идея</a>
-        <a class="optional" href="#modules">Модули</a>
-        <a class="optional" href="#documentation">Документация</a>
+        <a class="optional" href="#architecture">Как работает</a>
+        <a class="optional" href="#contract">Возможности</a>
+        <a class="optional" href="#example">Пример</a>
+        <a class="optional" href="https://github.com/ShaoShur/qlik-script-toolkit" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a class="back-link" href="../../index.html#projects">← Все проекты</a>
       </nav>
     </div>
@@ -36,29 +36,27 @@
     <section class="detail-hero">
       <div class="container detail-hero-grid">
         <div class="reveal">
-          <div class="detail-status"><i></i> Qlik Script · modular library</div>
-          <p class="detail-kicker">QVD Control Library</p>
-          <h1>Подпрограммы.<br><em>Как библиотека.</em></h1>
-          <p class="detail-lead">Модульная система QVS-подпрограмм: нужная папка подключается одной командой, каждый файл добавляет собственную логику, а затем библиотека сама вызывает обработчики очистки и убирает служебные переменные.</p>
+          <div class="detail-status"><i></i> Public repository · Qlik Script</div>
+          <p class="detail-kicker">Qlik Script Toolkit</p>
+          <h1 class="toolkit-title">Модульные<br><em>Qlik-скрипты.</em></h1>
+          <p class="detail-lead">Вместо растущих <code>header.qvs</code> и <code>footer.qvs</code> — независимые библиотеки подпрограмм. Каждый QVS-модуль работает как единственный экземпляр со своим публичным интерфейсом, состоянием, справкой, тестом и очисткой.</p>
           <div class="detail-actions">
-            <a class="detail-button primary" href="../../downloads/QVD-Control-Library.zip" download>Скачать библиотеку · 18 КБ <span>↓</span></a>
-            <a class="detail-button" href="#architecture">Посмотреть архитектуру <span>↘</span></a>
+            <a class="detail-button primary" href="https://github.com/ShaoShur/qlik-script-toolkit" target="_blank" rel="noopener noreferrer">Открыть на GitHub <span>↗</span></a>
+            <a class="detail-button" href="#example">Посмотреть пример <span>↓</span></a>
           </div>
-          <p class="detail-note">ZIP содержит только QVS-файлы в папке Scripts с сохранением структуры каталогов</p>
+          <p class="detail-note">Авторский разбор и обсуждение проекта — <a href="https://t.me/ShurQlik/11" target="_blank" rel="noopener noreferrer">в канале ShurQlik ↗</a></p>
         </div>
 
         <div class="hero-panel reveal" aria-label="Загрузка модулей QVS">
           <div class="window-bar"><span>LIBCONNECTION.QVS / TRACE</span><span class="window-dots"><i></i><i></i><i></i></span></div>
           <div class="panel-body">
-            <div class="panel-title"><div><small>INCLUDE GROUP</small><strong>ККД</strong></div><small>4 modules found</small></div>
+            <div class="panel-title"><div><small>INCLUDE LIBRARY</small><strong>ЛЛМ</strong></div><small>2 modules found</small></div>
             <div class="data-table" aria-hidden="true">
               <div class="data-row header"><span>#</span><span>Module</span><span>Status</span><span>Clear handler</span></div>
-              <div class="data-row"><span>01</span><span>Backup.qvs</span><span class="ok">included</span><span>Backup_clear</span></div>
-              <div class="data-row"><span>02</span><span>Compare.qvs</span><span class="ok">included</span><span>Compare_clear</span></div>
-              <div class="data-row"><span>03</span><span>CheckRowsCount.qvs</span><span class="ok">included</span><span>CheckRowsCount_clear</span></div>
-              <div class="data-row"><span>04</span><span>CheckUniqRecords.qvs</span><span class="ok">included</span><span>CheckUniqRecords_clear</span></div>
+              <div class="data-row"><span>01</span><span>TraceTimer.qvs</span><span class="ok">included</span><span>TraceTimer_clear</span></div>
+              <div class="data-row"><span>02</span><span>SafeDrop.qvs</span><span class="ok">included</span><span>SafeDrop_clear</span></div>
             </div>
-            <div class="panel-footer"><span>$(pIncludeCall)</span><span>cleanup queue ready</span></div>
+            <div class="panel-footer"><span>$(pInclude(ЛЛМ))</span><span>library ready</span></div>
           </div>
         </div>
       </div>
@@ -66,52 +64,51 @@
 
     <section class="detail-meta" aria-label="Краткая информация о проекте">
       <div class="container detail-meta-grid">
-        <div><span>Формат</span><strong>.qvs modules</strong></div>
-        <div><span>Подключение</span><strong>$(pInclude(...))</strong></div>
-        <div><span>Контроль</span><strong>QVD quality gates</strong></div>
-        <div><span>Очистка</span><strong>Automatic _clear</strong></div>
+        <div><span>Модель</span><strong>Module singleton</strong></div>
+        <div><span>Подключение</span><strong>Одна строка</strong></div>
+        <div><span>Контракт</span><strong>info / test / clear</strong></div>
+        <div><span>Для AI-агентов</span><strong>Skills + conventions</strong></div>
       </div>
     </section>
 
     <section class="detail-section paper" id="architecture">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="section-label">01 / АРХИТЕКТУРА</p><h2>Одна команда.<br>Вся нужная библиотека.</h2></div>
-          <p>Вместо ручного перечисления файлов `IncludeLib` обходит каталог, формирует цепочку `MUST_INCLUDE` и одновременно собирает вызовы очистки для каждого подключённого модуля.</p>
+          <div><p class="section-label">01 / КАК РАБОТАЕТ</p><h2>Библиотека вместо списка<br>MUST_INCLUDE.</h2></div>
+          <p><code>pInclude</code> подключает выбранную группу модулей. Загрузчик обходит её каталог, находит QVS-файлы и собирает обработчики очистки — приложение не нужно менять при появлении нового файла в библиотеке.</p>
         </div>
         <div class="flow-diagram reveal">
-          <article class="flow-node"><span>01 / CALL</span><h3>$(pInclude(ККД))</h3><p>Приложение запрашивает конкретную группу библиотек.</p></article>
-          <article class="flow-node"><span>02 / DISCOVER</span><h3>FileList(/*.qvs)</h3><p>Qlik находит все QVS-файлы в выбранном каталоге.</p></article>
-          <article class="flow-node"><span>03 / INCLUDE</span><h3>MUST_INCLUDE</h3><p>Из найденных путей динамически собирается очередь подключения.</p></article>
-          <article class="flow-node"><span>04 / CLEAN</span><h3>$(pClear)</h3><p>После работы вызываются `_clear` всех загруженных подпрограмм.</p></article>
+          <article class="flow-node"><span>01 / BASE</span><h3>Scripts.qvs</h3><p>Подключает общий загрузчик и единые правила работы модулей.</p></article>
+          <article class="flow-node"><span>02 / INCLUDE</span><h3>$(pInclude(ЛЛМ))</h3><p>Подключение библиотек одной строкой.</p></article>
+          <article class="flow-node"><span>03 / DISCOVER</span><h3>FileList(/*.qvs)</h3><p>Новые файлы библиотеки находятся и подключаются автоматически.</p></article>
+          <article class="flow-node"><span>04 / CLEAR</span><h3>&lt;Module&gt;_clear</h3><p>Каждый модуль сам описывает очистку своего временного состояния.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="detail-section soft" id="idea">
+    <section class="detail-section soft">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="section-label">02 / КОРОТКО ОБ ИДЕЕ</p><h2>Папка с QVS —<br>одна библиотека.</h2></div>
-          <p>Подпрограммы раскладываются по назначению: `ЛОГ`, `ККД`, `ДЕВ` и так далее. `$(pInclude(ККД))` обходит выбранную папку и подключает все QVS-файлы — отдельный `MUST_INCLUDE` для нового модуля не нужен.</p>
+          <div><p class="section-label">02 / ЗАЧЕМ</p><h2>15 строк или 500 тысяч.<br>Структура сохраняется.</h2></div>
+          <p>Подход разделяет логирование, контроль качества, разработку и другие задачи на самостоятельные библиотеки. Масштаб проекта перестаёт влиять на читаемость основного скрипта приложения.</p>
         </div>
         <div class="idea-brief reveal">
-          <p><strong>Соглашение</strong>Служебные переменные начинаются с `p`, а каждый модуль предоставляет собственный обработчик `_clear`.</p>
-          <p><strong>Использование</strong>Подключаем общий `Scripts.qvs`, нужную группу и завершаем загрузку через `Call Exit`.</p>
-          <p><strong>Обмен</strong>QVS-файл, собранный по этим правилам, можно передать коллеге: достаточно положить его в соответствующую папку.</p>
+          <p><strong>Одна задача — один файл</strong>Модуль можно развивать, тестировать и передавать отдельно от остальных библиотек.</p>
+          <p><strong>Понятный публичный интерфейс</strong>Разработчику доступны только описанные методы; внутреннюю реализацию не нужно знать для использования.</p>
+          <p><strong>Обмен внутри сообщества</strong>QVS-файл, собранный по общим соглашениям, можно добавить в библиотеку без ручного списка подключений.</p>
         </div>
-        <p class="idea-caption reveal">По модели использования это отдалённо напоминает класс: с внешними методами и скрытым по соглашению служебным состоянием. Это только аналогия — сам Qlik Script объектно-ориентированным от этого не становится.</p>
       </div>
     </section>
 
-    <section class="detail-section dark" id="code">
+    <section class="detail-section dark" id="quickstart">
       <div class="container code-layout">
         <div class="code-story reveal">
-          <p class="section-label">03 / МЕХАНИКА</p>
-          <h2>Подключить.<br>Выполнить.<br><span style="color:var(--acid)">Убрать за собой.</span></h2>
-          <p>У Qlik Script нет привычной изоляции локальных переменных внутри подключённых подпрограмм. Поэтому вместе с цепочкой include формируется `pClear`: список вызовов одноимённых `_clear`, который очищает служебное состояние всей библиотеки.</p>
+          <p class="section-label">03 / ИСПОЛЬЗОВАНИЕ</p>
+          <h2>Подключить.<br>Выполнить.<br><span style="color:var(--acid)">Завершить.</span></h2>
+          <p>Один базовый include и одна строка на нужную библиотеку. Подробная установка и настройка окружения остаются в README репозитория.</p>
         </div>
-        <div class="code-window reveal" aria-label="Пример подключения и использования QVS-библиотеки">
-          <div class="window-bar"><span>APP SCRIPT</span><span>WINDOWS-1251 / QLIK SCRIPT</span></div>
+        <div class="code-window reveal" aria-label="Минимальный пример подключения QVS-библиотеки">
+          <div class="window-bar"><span>APP SCRIPT / QUICKSTART</span><span>QLIK SCRIPT</span></div>
           <pre><code>$(MUST_INCLUDE=lib://*/Scripts/Scripts.qvs); <span class="muted-code">// подключаем общий скрипт</span>
 $(pInclude(ККД)); <span class="muted-code">// подключаем библиотеку скриптов</span>
 
@@ -122,49 +119,84 @@ $(pInclude(ККД)); <span class="muted-code">// подключаем библи
       </div>
     </section>
 
-    <section class="detail-section soft">
+    <section class="detail-section paper" id="contract">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="section-label">04 / КОНТРАКТ МОДУЛЯ</p><h2>Предсказуемая структура<br>каждой подпрограммы.</h2></div>
-          <p>Единые правила уменьшают конфликты глобальных переменных и позволяют подключать новые QVS-файлы без переписывания центрального загрузчика.</p>
+          <div><p class="section-label">04 / КОНТРАКТ</p><h2>Понятен разработчику.<br>Понятен AI-агенту.</h2></div>
+          <p>В репозитории лежат skills для создания QVS-модулей, а <code>CONVENTIONS.md</code> задаёт общие правила имён, интерфейсов, тестирования и очистки.</p>
         </div>
         <div class="feature-grid">
-          <article class="feature-card reveal"><span>_INFO</span><h3>Самодокументирование</h3><p>Модуль умеет вывести в trace назначение, версию, ответственного и варианты вызова.</p></article>
-          <article class="feature-card reveal"><span>MAIN</span><h3>Основная логика</h3><p>Подпрограмма без постфикса предоставляет публичный сценарий использования модуля.</p></article>
-          <article class="feature-card reveal"><span>_CLEAR</span><h3>Собственная уборка</h3><p>Каждый модуль знает свои служебные переменные и гарантированно очищает их после работы.</p></article>
+          <article class="feature-card reveal"><span>AI SKILLS</span><h3>Генерация модулей</h3><p>Агент получает специализированные инструкции и создаёт новый QVS-файл в рамках принятого контракта.</p></article>
+          <article class="feature-card reveal"><span>CONVENTIONS</span><h3>Предсказуемые имена</h3><p>Общие соглашения снижают риск конфликтов. Системные переменные toolkit используют зарезервированный префикс <code>p</code>.</p></article>
+          <article class="feature-card reveal"><span>PUBLIC / INTERNAL</span><h3>Условная инкапсуляция</h3><p>Публичные методы явно перечислены в справке, а служебные подпрограммы остаются внутренней реализацией модуля.</p></article>
+          <article class="feature-card reveal"><span>&lt;MODULE&gt;_INFO</span><h3>Встроенная документация</h3><p>Модуль сообщает назначение, ответственного, параметры, публичные методы и пример использования.</p></article>
+          <article class="feature-card reveal"><span>&lt;MODULE&gt;_TEST</span><h3>Воспроизводимый пример</h3><p>Тестовый вызов демонстрирует работу модуля без production-данных и помогает проверить результат после изменений.</p></article>
+          <article class="feature-card reveal"><span>&lt;MODULE&gt;_CLEAR</span><h3>Собственная очистка</h3><p>Модуль удаляет созданные переменные и временные объекты, не оставляя служебное состояние в итоговой модели.</p></article>
+        </div>
+        <aside class="ai-safety-note reveal"><span>AI / БЕЗОПАСНОСТЬ</span><p>AI-агент может запускать тесты через Qlik Engine при работающем Qlik Sense Desktop на <code>localhost:4848</code>. Не передавайте корпоративные документы и внутренний код в публичные AI-сервисы без разрешения компании.</p></aside>
+      </div>
+    </section>
+
+    <section class="detail-section dark" id="example">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">05 / ПРИМЕР</p><h2>TraceTimer:<br>от вызова до лога.</h2></div>
+          <p>Тестовое приложение подключает библиотеку <code>ЛЛМ</code>, несколько раз вызывает модуль измерения времени и показывает результат в журнале загрузки.</p>
+        </div>
+        <div class="toolkit-gallery">
+          <figure class="toolkit-screenshot toolkit-gallery-main reveal">
+            <img src="../../assets/qlik-script-toolkit/trace-timer-example.jpg" alt="Пример подключения Qlik Script Toolkit и вызовов TraceTimer в редакторе загрузки" loading="lazy">
+            <figcaption><span>01 / APP SCRIPT</span><strong>Подключение библиотеки и вызовы TraceTimer</strong></figcaption>
+          </figure>
+          <div class="toolkit-gallery-side">
+            <figure class="toolkit-screenshot reveal">
+              <img src="../../assets/qlik-script-toolkit/download-from-github.jpg" alt="Скачивание Qlik Script Toolkit с GitHub" loading="lazy">
+              <figcaption><span>02 / GITHUB</span><strong>Репозиторий можно скачать целиком</strong></figcaption>
+            </figure>
+            <figure class="toolkit-screenshot reveal">
+              <img src="../../assets/qlik-script-toolkit/trace-timer-output.jpg" alt="Результат тестового запуска TraceTimer в журнале Qlik Sense" loading="lazy">
+              <figcaption><span>03 / OUTPUT</span><strong>Результат в журнале загрузки</strong></figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="detail-section paper" id="modules">
+    <section class="detail-section soft" id="try">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="section-label">05 / МОДУЛИ</p><h2>Контроль качества<br>как часть ETL.</h2></div>
-          <p>Проверки и технические операции вызываются тем же способом, что и обычная бизнес-логика приложения.</p>
+          <div><p class="section-label">06 / ПОПРОБОВАТЬ</p><h2>Код, пример<br>и обсуждение.</h2></div>
+          <p>Репозиторий содержит актуальные библиотеки и правила разработки. QVF позволяет посмотреть тестовый сценарий, а пост в ShurQlik — обсудить сам подход.</p>
         </div>
-        <div class="module-grid">
-          <article class="module-card reveal"><span>BACKUP</span><h3>Backup</h3><p>Резервные копии QVD по расписанию: при каждой загрузке, ежедневно, еженедельно или ежемесячно.</p></article>
-          <article class="module-card reveal"><span>COMPARE</span><h3>Compare</h3><p>Сопоставление текущей таблицы с сохранённой версией по ключам, количеству и значениям мер.</p></article>
-          <article class="module-card reveal"><span>ROWS</span><h3>CheckRowsCount</h3><p>Контроль неожиданных изменений количества строк между этапами загрузки.</p></article>
-          <article class="module-card reveal"><span>UNIQUENESS</span><h3>CheckUniqRecords</h3><p>Поиск неуникальных записей по ключу с исключениями и отдельным списком мер.</p></article>
-          <article class="module-card reveal"><span>LOGGING</span><h3>AppLog</h3><p>Журналирование приложения, источников, сохранений, измерений, мер, тегов и комментариев.</p></article>
-          <article class="module-card reveal"><span>EXTENSIBLE</span><h3>Новый .qvs</h3><p>Достаточно положить модуль в библиотечную папку и реализовать контракт `_clear` — загрузчик найдёт его сам.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section soft" id="documentation">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><p class="section-label">06 / ДОКУМЕНТАЦИЯ</p><h2>Соглашения по разработке<br>библиотек подпрограмм.</h2></div>
-          <p>Основной архив содержит только исполняемые QVS-файлы. Описание модулей и правила расширения библиотеки можно скачать отдельно.</p>
-        </div>
-        <div class="download-grid">
-          <a class="download-card reveal" href="../../downloads/qvd-control-library-docs/QVD-Control-Library-Overview.docx" download>
-            <span>DOCX / 01</span><h3>Обзор существующих решений</h3><p>Назначение и публичные методы AppLog, Backup, Compare, CheckRowsCount и CheckUniqRecords.</p><strong>Скачать · 15 КБ <b aria-hidden="true">↓</b></strong>
+        <div class="download-grid github-doc-grid">
+          <a class="download-card reveal" href="https://github.com/ShaoShur/qlik-script-toolkit" target="_blank" rel="noopener noreferrer">
+            <span>PUBLIC REPOSITORY / GITHUB</span><h3>Qlik Script Toolkit</h3><p>Исходный код, структура библиотек, skills для AI-агентов и история изменений.</p><strong>Открыть репозиторий <b aria-hidden="true">↗</b></strong>
           </a>
-          <a class="download-card reveal" href="../../downloads/qvd-control-library-docs/QVD-Control-Library-Module-Rules.docx" download>
-            <span>DOCX / 02</span><h3>Правила добавления скриптов</h3><p>Соглашения по переменным, структуре `_info / main / _clear`, кодировке и публикации новых QVS-модулей.</p><strong>Скачать · 70 КБ <b aria-hidden="true">↓</b></strong>
+          <a class="download-card reveal" href="../../downloads/qlik-script-toolkit/qlik-script-toolkit.qvf" download>
+            <span>TEST APP / QVF</span><h3>Тестовое приложение</h3><p>Пример подключения toolkit и работы модуля TraceTimer в Qlik Sense Desktop.</p><strong>Скачать QVF · 176 КБ <b aria-hidden="true">↓</b></strong>
+          </a>
+          <a class="download-card reveal" href="https://t.me/ShurQlik/11" target="_blank" rel="noopener noreferrer">
+            <span>POST / SHURQLIK</span><h3>Разбор подхода</h3><p>Зачем Qlik-подпрограммам модульность, единый контракт и собственный жизненный цикл.</p><strong>Открыть в Telegram <b aria-hidden="true">↗</b></strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section paper" id="documentation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">07 / ДОКУМЕНТАЦИЯ</p><h2>Соглашения по разработке<br>модульных библиотек.</h2></div>
+          <p>Практические шаги вынесены в документацию проекта: README отвечает за установку, CONVENTIONS — за совместимость модулей, TESTING — за проверку через Qlik Engine.</p>
+        </div>
+        <div class="download-grid github-doc-grid">
+          <a class="download-card reveal" href="https://github.com/ShaoShur/qlik-script-toolkit/blob/main/readme.md" target="_blank" rel="noopener noreferrer">
+            <span>README.MD / START</span><h3>Установка и использование</h3><p>Структура репозитория, подключение toolkit и минимальный рабочий сценарий.</p><strong>Открыть на GitHub <b aria-hidden="true">↗</b></strong>
+          </a>
+          <a class="download-card reveal" href="https://github.com/ShaoShur/qlik-script-toolkit/blob/main/CONVENTIONS.md" target="_blank" rel="noopener noreferrer">
+            <span>CONVENTIONS.MD / CONTRACT</span><h3>Контракт QVS-модуля</h3><p>Имена, публичный интерфейс, служебные переменные, справка, тест и очистка.</p><strong>Открыть на GitHub <b aria-hidden="true">↗</b></strong>
+          </a>
+          <a class="download-card reveal" href="https://github.com/ShaoShur/qlik-script-toolkit/blob/main/TESTING.md" target="_blank" rel="noopener noreferrer">
+            <span>TESTING.MD / ENGINE</span><h3>Проверка модулей</h3><p>Запуск тестового сценария через Qlik Sense Desktop и анализ результата загрузки.</p><strong>Открыть на GitHub <b aria-hidden="true">↗</b></strong>
           </a>
         </div>
       </div>
@@ -172,14 +204,17 @@ $(pInclude(ККД)); <span class="muted-code">// подключаем библи
 
     <section class="detail-cta">
       <div class="container detail-cta-inner reveal">
-        <div><p class="section-label">QLIK ENGINEERING</p><h2>Код загрузки тоже<br>должен быть системой.</h2><p>Архитектура библиотеки создавалась для повторного использования, контролируемой поддержки и чистого состояния после выполнения.</p></div>
-        <a class="detail-button primary" href="../../downloads/QVD-Control-Library.zip" download>Скачать QVD Control Library <span>↓</span></a>
+        <div><p class="section-label">PUBLIC QLIK PROJECT</p><h2>Использовать.<br>Обсуждать. Дополнять.</h2><p>Код живёт на GitHub, а новые идеи и практические заметки по Qlik — в канале ShurQlik.</p></div>
+        <div class="detail-actions">
+          <a class="detail-button primary" href="https://github.com/ShaoShur/qlik-script-toolkit" target="_blank" rel="noopener noreferrer">Открыть GitHub <span>↗</span></a>
+          <a class="detail-button" href="https://t.me/ShurQlik" target="_blank" rel="noopener noreferrer">@ShurQlik <span>↗</span></a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="detail-footer">
-    <div class="container"><span>© <span data-year>2026</span> ShaoShur / QVD Control Library</span><a href="../../index.html#projects">← Вернуться к проектам</a></div>
+    <div class="container"><span>© <span data-year>2026</span> ShaoShur / Qlik Script Toolkit</span><a href="../../index.html#projects">← Вернуться к проектам</a></div>
   </footer>
   <script src="../../assets/detail.js" defer></script>
 </body>

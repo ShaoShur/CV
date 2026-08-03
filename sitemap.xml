@@ -21,6 +21,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://shaoshur.com/projects/process-flow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shaoshur.com/learning/qlik-sense/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

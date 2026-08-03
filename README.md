@@ -16,4 +16,4 @@ npx serve .
 2. В `Settings → Pages` выберите `Deploy from a branch`, ветку `main` и папку `/ (root)`.
 3. После настройки DNS добавьте в корень файл `CNAME` с одной строкой `shaoshur.com`.
 
-Сайт не использует бэкенд, npm-зависимости и сборщик. Внутренние страницы находятся в `/projects/` и `/learning/`, портативная тестовая сборка MyQvd — в `/downloads/`.
+Сайт не использует бэкенд, npm-зависимости и сборщик. Внутренние страницы находятся в `/projects/` и `/learning/`; загружаемые файлы MyQvd, Qlik Script Toolkit и Process Flow Analyzer — в `/downloads/`.

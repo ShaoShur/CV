@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d0c">
+  <meta name="description" content="Process Flow Analyzer — расширение Qlik Sense для интерактивной карты процесса. Скачать extension и демонстрационное приложение QVF.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Process Flow Analyzer для Qlik Sense | ShaoShur</title>
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="../../assets/detail.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+
+  <header class="detail-header">
+    <div class="container">
+      <a class="detail-brand" href="../../index.html" aria-label="ShaoShur — на главную">
+        <span class="detail-brand-mark">S</span>
+        <span class="detail-brand-copy"><strong>ShaoShur</strong><small>Project / Process Flow</small></span>
+      </a>
+      <nav class="detail-nav" aria-label="Навигация страницы">
+        <a class="optional" href="#features">Возможности</a>
+        <a class="optional" href="#materials">Материалы</a>
+        <a class="optional" href="#downloads">Скачать</a>
+        <a class="back-link" href="../../index.html#projects">← Все проекты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="detail-hero">
+      <div class="container detail-hero-grid">
+        <div class="reveal">
+          <div class="detail-status"><i></i> Qlik extension · v1.5.3</div>
+          <p class="detail-kicker">Process Mining / Qlik Sense</p>
+          <h1 class="toolkit-title">Процесс<br>становится <em>видимым.</em></h1>
+          <p class="detail-lead">Process Flow Analyzer строит интерактивную карту переходов прямо на листе Qlik Sense: показывает маршрут кейсов, объём потока и среднее время между событиями.</p>
+          <div class="detail-actions">
+            <a class="detail-button primary" href="../../downloads/process-flow/process-flow-1.5.3.zip" download>Скачать extension <span>↓</span></a>
+            <a class="detail-button" href="#screenshots">Посмотреть интерфейс <span>↓</span></a>
+          </div>
+          <p class="detail-note">ZIP · 9 КБ · документация включена</p>
+        </div>
+
+        <div class="hero-panel process-flow-art reveal" aria-label="Стилизованная карта процесса с операциями, переходами и узким местом">
+          <div class="window-bar"><span>АНАЛИЗ ПРОЦЕССОВ / QLIK SENSE</span><span>PROCESS FLOW</span></div>
+          <div class="process-art-canvas">
+            <svg class="process-art-lines" viewBox="0 0 650 360" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <marker id="flow-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"></path></marker>
+                <marker id="flow-arrow-alert" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"></path></marker>
+              </defs>
+              <path class="flow-fast" d="M108 82 C150 82 178 82 222 82"></path>
+              <path class="flow-medium" d="M302 82 C342 82 376 82 420 82"></path>
+              <path class="flow-fast" d="M500 82 C542 82 560 116 572 152"></path>
+              <path class="flow-alert" d="M262 118 C262 162 246 192 224 226"></path>
+              <path class="flow-return" d="M264 267 C354 282 423 221 455 120"></path>
+            </svg>
+            <span class="process-art-metric metric-a">1 434 · 6 ч</span>
+            <span class="process-art-metric metric-b">1 332 · 18,3 ч</span>
+            <span class="process-art-metric metric-c">203 · 57,7 ч</span>
+            <article class="process-art-node node-start"><small>01 / START</small><strong>Заказ создан</strong><span>1 434 кейса</span></article>
+            <article class="process-art-node node-check"><small>02 / CHECK</small><strong>Оплата</strong><span>1 332 кейса</span></article>
+            <article class="process-art-node node-pack"><small>03 / FLOW</small><strong>Комплектация</strong><span>1 129 кейсов</span></article>
+            <article class="process-art-node node-done"><small>04 / DONE</small><strong>Доставка</strong><span>1 086 кейсов</span></article>
+            <article class="process-art-node node-delay is-alert"><small>BOTTLENECK</small><strong>Задержка</strong><span>203 кейса</span></article>
+          </div>
+          <div class="process-art-footer"><span><i class="legend-fast"></i> быстрый</span><span><i class="legend-medium"></i> средний</span><span><i class="legend-alert"></i> узкое место</span><strong>1 434 CASES / 5 EVENTS</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-meta" aria-label="Краткая информация о проекте">
+      <div class="container detail-meta-grid">
+        <div><span>Формат</span><strong>Qlik extension</strong></div>
+        <div><span>Версия</span><strong>1.5.3</strong></div>
+        <div><span>Входные данные</span><strong>Переходы событий</strong></div>
+        <div><span>Пример</span><strong>QVF-приложение</strong></div>
+      </div>
+    </section>
+
+    <section class="detail-section paper" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">01 / ВОЗМОЖНОСТИ</p><h2>Не просто граф.<br>Рабочий объект Qlik.</h2></div>
+          <p>Расширение получает уже рассчитанные переходы из hypercube и остаётся частью ассоциативного анализа: карта реагирует на выборки и сама помогает фильтровать процесс.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><span>FLOW</span><h3>Операции и переходы</h3><p>Карточки показывают этапы процесса, толщина связей — относительный объём кейсов, а направление линии — ход процесса.</p></article>
+          <article class="feature-card reveal"><span>TIME</span><h3>Время и узкие места</h3><p>На переходах видны число кейсов и среднее время. Цвет помогает сравнить быстрые участки, средние переходы и задержки.</p></article>
+          <article class="feature-card reveal"><span>SELECT</span><h3>Выборки в Qlik</h3><p>Нажатие на переход выбирает исходное и следующее событие, связывая карту с остальными объектами листа.</p></article>
+          <article class="feature-card reveal"><span>LAYOUT</span><h3>Две ориентации</h3><p>В свойствах объекта можно переключаться между горизонтальной и вертикальной раскладкой процесса.</p></article>
+          <article class="feature-card reveal"><span>NAVIGATION</span><h3>Масштаб и перемещение</h3><p>Колесо мыши и кнопки меняют масштаб, а перетаскивание помогает работать с разветвлённой картой.</p></article>
+          <article class="feature-card reveal"><span>QLIK</span><h3>Текущий контекст</h3><p>Объём и относительная шкала времени пересчитываются вместе с текущими выборками приложения.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section dark" id="screenshots">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">02 / ИНТЕРФЕЙС</p><h2>Карта процесса<br>в двух направлениях.</h2></div>
+          <p>Один и тот же объект можно встроить в аналитический лист или развернуть отдельно для подробного изучения маршрутов.</p>
+        </div>
+        <div class="process-gallery">
+          <a class="process-screenshot process-gallery-main reveal" href="../../assets/process-flow/process-analysis-sheet.png" target="_blank" rel="noopener noreferrer" data-lightbox data-caption="Карта вместе с таблицей переходов" aria-label="Открыть полный лист анализа процессов">
+            <img src="../../assets/process-flow/process-analysis-sheet.png" alt="Полный лист анализа процессов в Qlik Sense" loading="lazy">
+            <span class="process-shot-caption"><span>01 / QLIK SHEET</span><strong>Карта вместе с таблицей переходов</strong><em>Открыть крупно ↗</em></span>
+          </a>
+          <div class="process-gallery-side">
+            <a class="process-screenshot reveal" href="../../assets/process-flow/process-map-horizontal.png" target="_blank" rel="noopener noreferrer" data-lightbox data-caption="Горизонтальная раскладка Process Flow" aria-label="Открыть горизонтальную карту процесса">
+              <img src="../../assets/process-flow/process-map-horizontal.png" alt="Горизонтальная карта процесса в расширении Qlik Sense" loading="lazy">
+              <span class="process-shot-caption"><span>02 / HORIZONTAL</span><strong>Горизонтальная раскладка</strong><em>Открыть крупно ↗</em></span>
+            </a>
+            <a class="process-screenshot reveal" href="../../assets/process-flow/process-map-vertical.jpg" target="_blank" rel="noopener noreferrer" data-lightbox data-caption="Вертикальная раскладка Process Flow" aria-label="Открыть вертикальную карту процесса">
+              <img src="../../assets/process-flow/process-map-vertical.jpg" alt="Вертикальная карта процесса в расширении Qlik Sense" loading="lazy">
+              <span class="process-shot-caption"><span>03 / VERTICAL</span><strong>Вертикальная раскладка</strong><em>Открыть крупно ↗</em></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section paper" id="materials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">03 / ЭКСПЕРТИЗА И МАТЕРИАЛЫ</p><h2>Разобраться<br>в Process Mining.</h2></div>
+          <p>Сертификат подтверждает профильное обучение, а два авторских видео объясняют сам метод, его место в BI и применение для цифровизации процессов.</p>
+        </div>
+        <div class="process-proof-grid">
+          <article class="certificate-feature reveal">
+            <a class="certificate-image-link" href="../../assets/process-flow/process-mining-certificate.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Открыть сертификат Process Mining в полном размере">
+              <img src="../../assets/process-flow/process-mining-certificate.jpeg" alt="Сертификат Павла Шурмистрова о прохождении курса Process Mining: Data Science in Action" loading="lazy">
+              <span>Открыть крупно ↗</span>
+            </a>
+            <div class="certificate-feature-copy">
+              <span>CERTIFICATE / TU EINDHOVEN · COURSERA</span>
+              <h3>Process Mining:<br>Data Science in Action</h3>
+              <p>Eindhoven University of Technology · 25.08.2021</p>
+              <a href="https://coursera.org/verify/U9ESXC2BQJ4P" target="_blank" rel="noopener noreferrer">Проверить сертификат на Coursera <b aria-hidden="true">↗</b></a>
+            </div>
+          </article>
+          <div class="process-proof-videos">
+            <a class="lesson-card compact-process-video reveal" href="https://youtu.be/yF9hml7XjfE" target="_blank" rel="noopener noreferrer">
+              <div class="lesson-thumb"><img src="https://i.ytimg.com/vi/yF9hml7XjfE/hqdefault.jpg" alt="Process Mining в Qlik Sense" loading="lazy"><span class="lesson-play">▶</span></div>
+              <div class="lesson-content"><span>ВИДЕО 01 / QLIK SENSE</span><h3>Process Mining в Qlik Sense</h3><p>Что такое процессная аналитика и как внедрить управление процессами внутри BI.</p><small>Смотреть на YouTube ↗</small></div>
+            </a>
+            <a class="lesson-card compact-process-video reveal" href="https://youtu.be/VpPdZA6Thgo" target="_blank" rel="noopener noreferrer">
+              <div class="lesson-thumb"><img src="https://i.ytimg.com/vi/VpPdZA6Thgo/hqdefault.jpg" alt="Цифровизация бизнес-процессов компании" loading="lazy"><span class="lesson-play">▶</span></div>
+              <div class="lesson-content"><span>ВИДЕО 02 / TRANSFORMATION</span><h3>Цифровизация бизнес-процессов</h3><p>Как Process Mining связывает цифровую трансформацию с фактическим ходом работы.</p><small>Смотреть на YouTube ↗</small></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section soft" id="downloads">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">04 / ПОПРОБОВАТЬ</p><h2>Extension и готовый<br>пример приложения.</h2></div>
+          <p>Сначала установите расширение в своём окружении Qlik Sense, затем откройте демонстрационное приложение. QVF не содержит локальный extension внутри себя.</p>
+        </div>
+        <div class="download-grid">
+          <a class="download-card reveal" href="../../downloads/process-flow/process-flow-1.5.3.zip" download>
+            <span>EXTENSION / ZIP / V1.5.3</span>
+            <h3>Process Flow Analyzer</h3>
+            <p>Архив с визуализацией, стилями и README: состав данных, выражения мер, управление картой и ограничения.</p>
+            <strong>Скачать ZIP · 9 КБ <b>↓</b></strong>
+          </a>
+          <a class="download-card reveal" href="../../downloads/process-flow/process-analysis.qvf" download="Анализ процессов.qvf">
+            <span>DEMO APP / QVF</span>
+            <h3>Анализ процессов</h3>
+            <p>Демонстрационное приложение Qlik Sense с подготовленной таблицей переходов и настроенным объектом Process Flow.</p>
+            <strong>Скачать QVF · 640 КБ <b>↓</b></strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section paper">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="section-label">05 / ДАННЫЕ</p><h2>Четыре колонки<br>для карты переходов.</h2></div>
+          <p>Расширение визуализирует подготовленные переходы и не выполняет discovery по сырому журналу событий самостоятельно.</p>
+        </div>
+        <div class="idea-brief process-data-contract">
+          <p class="reveal"><strong>01 / Исходное событие</strong>Первое измерение: операция, с которой начинается переход.</p>
+          <p class="reveal"><strong>02 / Следующее событие</strong>Второе измерение: операция, в которую пришёл кейс.</p>
+          <p class="reveal"><strong>03 / Число кейсов</strong>Первая мера — например, <code>Count(DISTINCT CaseID)</code>.</p>
+          <p class="reveal"><strong>04 / Среднее время</strong>Вторая мера — длительность перехода в часах.</p>
+        </div>
+        <p class="idea-caption reveal">Для сложных сетей с большим количеством циклов полезно заранее отфильтровать варианты процесса. Один объект отображает до 500 агрегированных переходов.</p>
+      </div>
+    </section>
+
+    <section class="detail-cta">
+      <div class="container detail-cta-inner reveal">
+        <div><p class="section-label">PROCESS FLOW / QLIK</p><h2>Установить.<br>Открыть. Исследовать.</h2><p>В архиве есть подробная инструкция для Qlik Sense Desktop и client-managed окружения.</p></div>
+        <a class="detail-button primary" href="../../downloads/process-flow/process-flow-1.5.3.zip" download>Скачать Process Flow <span>↓</span></a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="image-lightbox" data-lightbox-dialog aria-label="Просмотр скриншотов Process Flow">
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="Закрыть">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Предыдущее изображение">←</button>
+    <figure>
+      <img data-lightbox-image src="" alt="">
+      <figcaption><span data-lightbox-count></span><strong data-lightbox-caption></strong></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Следующее изображение">→</button>
+  </dialog>
+
+  <footer class="detail-footer">
+    <div class="container"><span>© <span data-year>2026</span> ShaoShur / Process Flow</span><a href="../../index.html#projects">← Вернуться к проектам</a></div>
+  </footer>
+  <script src="../../assets/detail.js" defer></script>
+</body>
+</html>
