@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-labelledby="title desc">
+  <title id="title">Портфолио Qlik</title>
+  <desc id="desc">Стилизованная схема каталога аналитических проектов</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".045"/>
+    </pattern>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#b6f23c" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#b6f23c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="440" fill="#0b0d0c"/>
+  <rect width="800" height="440" fill="url(#grid)"/>
+  <circle cx="680" cy="40" r="250" fill="url(#glow)"/>
+  <g font-family="IBM Plex Mono,Consolas,monospace">
+    <text x="32" y="34" fill="#777d75" font-size="10" letter-spacing="1.6">QLIK / PROJECT SYSTEM</text>
+    <text x="768" y="34" fill="#b6f23c" font-size="10" text-anchor="end">01 LIVE</text>
+  </g>
+  <path d="M205 148H286M392 148H474M205 310H286M392 310H474" stroke="#b6f23c" stroke-opacity=".5"/>
+  <path d="M339 190V268" stroke="#b6f23c" stroke-opacity=".5"/>
+  <g fill="#121512" stroke="#ffffff" stroke-opacity=".18">
+    <rect x="42" y="82" width="164" height="130"/>
+    <rect x="286" y="82" width="106" height="130"/>
+    <rect x="474" y="82" width="284" height="130"/>
+    <rect x="42" y="252" width="164" height="126"/>
+    <rect x="286" y="252" width="106" height="126"/>
+    <rect x="474" y="252" width="284" height="126"/>
+  </g>
+  <g font-family="IBM Plex Mono,Consolas,monospace">
+    <text x="58" y="106" fill="#747a72" font-size="9">01 / CONTROL</text>
+    <text x="58" y="140" fill="#ffffff" font-size="17" font-weight="600">KPI</text>
+    <text x="58" y="164" fill="#b6f23c" font-size="28" font-weight="600">84.6%</text>
+    <path d="M58 190h22l12-14 17 5 17-31 18 13 18-44 24-7" fill="none" stroke="#b6f23c" stroke-width="2"/>
+
+    <text x="302" y="106" fill="#747a72" font-size="9">02 / DATA</text>
+    <circle cx="339" cy="148" r="28" fill="none" stroke="#b6f23c" stroke-opacity=".55"/>
+    <circle cx="339" cy="148" r="12" fill="#b6f23c" fill-opacity=".18" stroke="#b6f23c"/>
+    <text x="339" y="190" fill="#90968d" font-size="8" text-anchor="middle">QVD / DWH</text>
+
+    <text x="490" y="106" fill="#747a72" font-size="9">03 / ANALYSIS MAP</text>
+    <g fill="#b6f23c">
+      <circle cx="522" cy="162" r="5"/><circle cx="574" cy="135" r="8"/><circle cx="626" cy="169" r="6"/><circle cx="690" cy="126" r="10"/><circle cx="724" cy="177" r="4"/>
+    </g>
+    <g stroke="#b6f23c" stroke-opacity=".42">
+      <path d="M522 162l52-27 52 34 64-43 34 51"/>
+    </g>
+
+    <text x="58" y="276" fill="#747a72" font-size="9">04 / RISK</text>
+    <rect x="58" y="302" width="20" height="46" fill="#d16a69"/><rect x="86" y="316" width="20" height="32" fill="#d7a432"/><rect x="114" y="326" width="20" height="22" fill="#b6f23c"/><rect x="142" y="334" width="20" height="14" fill="#6e8f30"/>
+    <path d="M58 290c42 6 78 18 124 55" fill="none" stroke="#ffffff" stroke-opacity=".45"/>
+
+    <text x="302" y="276" fill="#747a72" font-size="9">05 / FLOW</text>
+    <rect x="306" y="302" width="66" height="26" fill="none" stroke="#b6f23c"/><rect x="306" y="338" width="66" height="26" fill="none" stroke="#ffffff" stroke-opacity=".24"/>
+    <path d="M339 328v10" stroke="#b6f23c"/>
+
+    <text x="490" y="276" fill="#747a72" font-size="9">PORTFOLIO / CASES</text>
+    <text x="490" y="321" fill="#ffffff" font-size="30" font-weight="600">PROJECTS</text>
+    <text x="490" y="350" fill="#b6f23c" font-size="12" letter-spacing="1.4">DATA → DECISIONS</text>
+  </g>
+</svg>

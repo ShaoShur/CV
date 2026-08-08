@@ -3,6 +3,7 @@
 
 # Локальные визуальные проверки.
 preview-*.png
+.chrome-preview/
 .chrome-preview-*/
 
 # Системные файлы.

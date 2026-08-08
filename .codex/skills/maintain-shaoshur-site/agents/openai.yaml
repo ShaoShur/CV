@@ -1,0 +1,4 @@
+interface:
+  display_name: "ShaoShur Site"
+  short_description: "Поддержка сайта и Qlik-портфолио ShaoShur"
+  default_prompt: "Используй $maintain-shaoshur-site для доработки сайта с сохранением его архитектуры и визуального языка."

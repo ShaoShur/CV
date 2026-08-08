@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-labelledby="title desc">
+  <title id="title">Казначейская аналитика</title>
+  <desc id="desc">Стилизованный интерфейс с бюджетными показателями, рисками и картой процесса</desc>
+  <defs>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#ffffff" stroke-opacity=".04"/></pattern>
+  </defs>
+  <rect width="800" height="440" fill="#0b0d0c"/>
+  <rect width="800" height="440" fill="url(#grid)"/>
+  <g font-family="IBM Plex Mono,Consolas,monospace">
+    <text x="28" y="32" fill="#777d75" font-size="10" letter-spacing="1.4">TREASURY / QLIK SENSE</text>
+    <text x="772" y="32" fill="#b6f23c" font-size="10" text-anchor="end">SYSTEM ONLINE</text>
+  </g>
+  <g fill="#121512" stroke="#ffffff" stroke-opacity=".16">
+    <rect x="28" y="56" width="174" height="82"/><rect x="218" y="56" width="174" height="82"/><rect x="408" y="56" width="174" height="82"/><rect x="598" y="56" width="174" height="82"/>
+  </g>
+  <g font-family="IBM Plex Mono,Consolas,monospace">
+    <text x="44" y="78" fill="#747a72" font-size="8">БЮДЖЕТ</text><text x="44" y="111" fill="#ffffff" font-size="24" font-weight="600">1 800</text><text x="121" y="111" fill="#b6f23c" font-size="10">млрд ₽</text>
+    <text x="234" y="78" fill="#747a72" font-size="8">ИСПОЛНЕНИЕ</text><text x="234" y="111" fill="#b6f23c" font-size="24" font-weight="600">84.6%</text>
+    <text x="424" y="78" fill="#747a72" font-size="8">ПОД РИСКОМ</text><text x="424" y="111" fill="#d16a69" font-size="24" font-weight="600">75.3</text>
+    <text x="614" y="78" fill="#747a72" font-size="8">КЕЙСЫ</text><text x="614" y="111" fill="#ffffff" font-size="24" font-weight="600">12 000</text>
+  </g>
+  <g fill="#121512" stroke="#ffffff" stroke-opacity=".16">
+    <rect x="28" y="156" width="288" height="246"/><rect x="332" y="156" width="440" height="246"/>
+  </g>
+  <g font-family="IBM Plex Mono,Consolas,monospace">
+    <text x="44" y="181" fill="#747a72" font-size="8">ПЛАН / ФАКТ / ПРОГНОЗ</text>
+    <path d="M48 340C84 331 103 310 135 315s44-29 80-21 45-43 78-77" fill="none" stroke="#b6f23c" stroke-width="3"/>
+    <path d="M48 352H294M48 308H294M48 264H294M48 220H294" stroke="#ffffff" stroke-opacity=".06"/>
+    <g fill="#b6f23c"><circle cx="48" cy="340" r="4"/><circle cx="135" cy="315" r="4"/><circle cx="215" cy="294" r="4"/><circle cx="293" cy="217" r="4"/></g>
+    <text x="44" y="382" fill="#90968d" font-size="8">12 МЕСЯЦЕВ / НАКОПИТЕЛЬНО</text>
+
+    <text x="348" y="181" fill="#747a72" font-size="8">ФАКТИЧЕСКИЙ ПРОЦЕСС ПЛАТЕЖА</text>
+    <g fill="#161a16" stroke="#b6f23c" stroke-opacity=".65">
+      <rect x="358" y="230" width="92" height="45"/><rect x="489" y="230" width="92" height="45"/><rect x="650" y="230" width="92" height="45"/><rect x="489" y="324" width="92" height="45"/>
+    </g>
+    <g fill="#aeb3ab" font-size="8" text-anchor="middle">
+      <text x="404" y="250">ПОЛУЧЕН</text><text x="404" y="263" fill="#747a72">12 000</text>
+      <text x="535" y="250">КОНТРОЛЬ</text><text x="535" y="263" fill="#747a72">11 900</text>
+      <text x="696" y="250">ИСПОЛНЕН</text><text x="696" y="263" fill="#747a72">10 543</text>
+      <text x="535" y="344">ОТКЛОНЁН</text><text x="535" y="357" fill="#d16a69">294</text>
+    </g>
+    <path d="M450 252H489M581 252H650" stroke="#b6f23c" stroke-width="3"/>
+    <path d="M535 275V324" stroke="#d16a69" stroke-width="3"/>
+    <path d="M581 346C635 346 630 275 650 253" fill="none" stroke="#d7a432" stroke-width="2"/>
+    <text x="348" y="390" fill="#b6f23c" font-size="8" letter-spacing="1">4 APPS / BUDGET · RISK · PROCESS</text>
+  </g>
+</svg>
